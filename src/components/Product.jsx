@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "../css/Product.css"
 
 function Product({product}) {
     const {id , price , image , title , description , } = product;
-    console.log(product.price);
+    
+    const navigate = useNavigate();
   return (
     <div className="card" >
       <img className="image" src={image}/>
@@ -12,7 +14,7 @@ function Product({product}) {
       </div>
 
       <div className="flex-row" >  
-        <button className="detail-button">Ürün Detayına Git</button>
+        <button onClick={()=> navigate("/product-details/" + id)} className="detail-button">Ürün Detayına Git</button>
       </div>
     </div>
   )
