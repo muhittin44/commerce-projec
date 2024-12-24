@@ -7,10 +7,12 @@ const initialState = {
     loading : false
 }
 
-const BASE_URL = "https://fakestoreapi.com"
+const BASE_URL = "http://localhost:5000";
+
 
 export const getAllProducts = createAsyncThunk("getAllProducts" , async()=>{
     const response = await axios.get(`${BASE_URL}/products`)
+    console.log(response.data)
     return response.data
 })
 

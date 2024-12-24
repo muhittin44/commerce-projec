@@ -7,12 +7,14 @@ function ProductList() {
     
     const dispatch = useDispatch();
     const {products} = useSelector((store)=>store.product)
-    console.log(products);
 
     useEffect(()=>{ // useeffect sayfa ilk yüklendiğinde çalışır.
         dispatch(getAllProducts());
 
     } , [])
+    
+    console.log("Fetched products:", products);
+    
   return (
     <div className='flex-row' style={{flexWrap:"wrap", marginTop:"40px"}}>
       {
